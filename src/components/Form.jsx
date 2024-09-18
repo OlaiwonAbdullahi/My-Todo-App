@@ -27,7 +27,7 @@ export default function Form({ onAddItems }) {
         placeholder="Add a Task"
         value={task}
         onChange={(e) => setTask(e.target.value)}
-        className="bg-bgColor border rounded-l-md w-1/3 text-textColor p-2"
+        className="bg-bgColor border rounded-l-md max-w-full w-3/4 md:w-1/3 text-textColor p-2"
       />
       <button className="border border-textColor rounded-e-lg p-1 w-20">
         Add
