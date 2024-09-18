@@ -5,7 +5,7 @@ import TodoList from "./components/TodoList";
 
 function App() {
   return (
-    <div className=" h-screen bg-bgColor text-textColor">
+    <div className=" h-screen bg-bgColor text-textColor ">
       <Header />
       <Form />
       <TodoList />
