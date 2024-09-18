@@ -1,21 +1,13 @@
-import { useState } from "react";
-
 export default function TodoList({ items }) {
-  const [todos, setTodos] = useState(items); // Initialize state with items prop
-
   const handleChecked = (id) => {
-    // Toggle completion status
-    setTodos((prevTodos) =>
-      prevTodos.map((todo) =>
-        todo.id === id ? { ...todo, completed: !todo.completed } : todo
-      )
-    );
+    // You'll need to implement logic here to update the checked status of items,
+    // but for now, this can be controlled by the parent component (App)
   };
 
   return (
     <div className="flex justify-center p-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-4 mx-auto">
-        {todos.map((item) => (
+        {items.map((item) => (
           <Todo key={item.id} item={item} onChecked={handleChecked} />
         ))}
       </div>
@@ -33,7 +25,7 @@ function Todo({ item, onChecked }) {
         <input
           type="checkbox"
           checked={item.completed}
-          onChange={() => onChecked(item.id)} // Toggle completion
+          onChange={() => onChecked(item.id)} // For future implementation
           className="w-4 h-4 sm:w-3 sm:h-3 bg-bgColor border-2 border-hrColor rounded-sm accent-hrColor"
         />
       </div>

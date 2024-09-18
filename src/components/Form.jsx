@@ -13,7 +13,8 @@ export default function Form({ onAddItems }) {
       completed: false, // Initial state is not completed
     };
     setTask(""); // Reset the input field
-    onAddItems(newTask); // Add new task to the list
+    onAddItems(newTask);
+    console.log(newTask); // Add new task to the list
   }
 
   return (
