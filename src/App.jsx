@@ -28,7 +28,7 @@ function App() {
   }
 
   return (
-    <div className="h-screen bg-bgColor text-textColor">
+    <div className="h-full bg-bgColor text-textColor">
       <Header />
       <Form onAddItems={handleAddItems} />
       <TodoList
