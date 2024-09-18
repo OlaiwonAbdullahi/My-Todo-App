@@ -6,9 +6,10 @@ import TodoList from "./components/TodoList";
 
 function App() {
   const [items, setItems] = useState([]);
+  const [editId, setEditId] = useState(null); // Track which task is being edited
 
   function handleAddItems(item) {
-    setItems((prevItems) => [...prevItems, item]); // Add new item to the state
+    setItems((prevItems) => [...prevItems, item]);
   }
 
   function handleDeleteItem(id) {
@@ -16,13 +17,14 @@ function App() {
   }
 
   function editTask(id, newName) {
-    const editedTaskList = tasks.map((task) => {
-      if (id === task.id) {
-        return { ...task, name: newName };
+    const editedTaskList = items.map((item) => {
+      if (id === item.id) {
+        return { ...item, task: newName };
       }
-      return task;
+      return item;
     });
-    setTasks(editedTaskList);
+    setItems(editedTaskList);
+    setEditId(null); // Reset edit mode after editing
   }
 
   return (
@@ -33,6 +35,8 @@ function App() {
         items={items}
         onDeleteItem={handleDeleteItem}
         editTask={editTask}
+        editId={editId}
+        setEditId={setEditId}
       />
       <Sorting />
     </div>
