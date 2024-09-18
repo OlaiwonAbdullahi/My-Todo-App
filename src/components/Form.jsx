@@ -1,6 +1,6 @@
 export default function Form() {
   return (
-    <div className="mt-8 flex justify-center font-titalium">
+    <div className="mt-8 flex justify-center font-titalium mb-8">
       <input
         type="text"
         placeholder="Add a Task"

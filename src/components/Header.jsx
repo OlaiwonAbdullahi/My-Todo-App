@@ -1,23 +1,25 @@
 import Logo from "../assets/Logo.svg";
 import github from "../assets/github.svg";
+
 export default function Header() {
   return (
     <>
-      <div className=" flex h-14 justify-between font-titalium p-3 sticky top-0 z-10 bg-bgColor mb-3">
-        <div className=" flex gap-3">
-          <img src={Logo} className="h-12 w-12"></img>
-          <span className="mt-3">My Todo App</span>
+      <div className="flex h-14 justify-between items-center font-titalium p-3 sticky top-0 z-10 bg-bgColor mb-3 shadow-md">
+        <div className="flex items-center gap-3">
+          <img src={Logo} className="h-12 w-12" alt="Logo" />
+          <span className="text-lg sm:text-xl">My Todo App</span>
         </div>
-        <div className="has-tooltip">
-          <span className="tooltip rounded p-1  text-textColor mr bg-hrColor border w-14 mr-10 mt-10 ">
-            GitHub Repo
-          </span>
-          <a href="https://github.com/OlaiwonAbdullahi/My-Todo-App">
-            <img src={github} alt="" className="h-12 w-12" />
+        <div className="relative group">
+          <a
+            href="https://github.com/OlaiwonAbdullahi/My-Todo-App"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={github} alt="GitHub" className="h-10 w-10" />
           </a>
         </div>
       </div>
-      <hr className=" mt-3 border-hrColor" />
+      <hr className="border-hrColor" />
     </>
   );
 }
