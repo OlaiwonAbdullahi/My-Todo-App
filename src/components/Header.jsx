@@ -1,5 +1,6 @@
 import Logo from "../assets/Logo.svg";
 import github from "../assets/github.svg";
+import sun from "../assets/sun.svg";
 
 export default function Header() {
   return (
@@ -9,7 +10,7 @@ export default function Header() {
           <img src={Logo} className="h-12 w-12" alt="Logo" />
           <span className="text-lg sm:text-xl">My Todo App</span>
         </div>
-        <div className="relative group">
+        <div className="flex gap-3 mr-4">
           <a
             href="https://github.com/OlaiwonAbdullahi/My-Todo-App"
             target="_blank"
@@ -17,6 +18,7 @@ export default function Header() {
           >
             <img src={github} alt="GitHub" className="h-10 w-10" />
           </a>
+          <img src={sun} alt="LightMode" className="h-9 w-9" />
         </div>
       </div>
       <hr className="border-hrColor" />

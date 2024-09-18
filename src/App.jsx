@@ -1,5 +1,6 @@
 import Form from "./components/Form";
 import Header from "./components/Header";
+import Sorting from "./components/Sorting";
 import TodoList from "./components/TodoList";
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
       <Header />
       <Form />
       <TodoList />
+      <Sorting />
     </div>
   );
 }
