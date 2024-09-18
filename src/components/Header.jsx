@@ -1,6 +1,6 @@
 import Logo from "../assets/Logo.svg";
 import github from "../assets/github.svg";
-import sun from "../assets/sun.svg";
+//import sun from "../assets/sun.svg";
 
 export default function Header() {
   return (
@@ -18,7 +18,7 @@ export default function Header() {
           >
             <img src={github} alt="GitHub" className="h-10 w-10" />
           </a>
-          <img src={sun} alt="LightMode" className="h-9 w-9" />
+          {/*<img src={sun} alt="LightMode" className="h-9 w-9" />*/}
         </div>
       </div>
       <hr className="border-hrColor" />
