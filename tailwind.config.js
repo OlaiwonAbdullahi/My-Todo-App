@@ -7,6 +7,9 @@ export default {
         textColor: "#e7e5e5",
         bgColor: "#0c0c0c",
       },
+      fontFamily: {
+        titalium: ["Titillium Web", "sans-serif"],
+      },
     },
   },
   plugins: [],
