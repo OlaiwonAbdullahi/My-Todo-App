@@ -1,6 +1,6 @@
 export default function Sorting() {
   return (
-    <div className=" flex justify-center bottom-0 sticky mb-0 gap-2">
+    <div className=" flex justify-center bottom-0 sticky mb-0 gap-2 font-titalium">
       <span>Sort By:</span>
       <select
         name=""
