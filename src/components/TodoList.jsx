@@ -1,8 +1,5 @@
 export default function TodoList({ items }) {
-  const handleChecked = (id) => {
-    // You'll need to implement logic here to update the checked status of items,
-    // but for now, this can be controlled by the parent component (App)
-  };
+  const handleChecked = (id) => {};
 
   return (
     <div className="flex justify-center p-4">
