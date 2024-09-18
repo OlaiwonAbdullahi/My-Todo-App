@@ -36,9 +36,19 @@ export default function TodoList() {
 
 function Todo() {
   return (
-    <div className="">
-      <p>Learn JavaScript basics</p>
-      <button></button>
+    <div className="border-hrColor border p-2 w-full sm:w-44 font-titalium">
+      <div className="flex justify-between gap-3">
+        <p className="mb-4 whitespace-nowrap">Learn JavaScript basics</p>
+        <input type="checkbox" />
+      </div>
+      <div className="flex gap-2 justify-between">
+        <button className="bg-bgColor rounded-md border p-1 w-16 sm:w-12 border-hrColor text-sm">
+          Edit
+        </button>
+        <button className="bg-red-500 text-white rounded-md p-1 w-16 sm:w-12 text-sm">
+          Delete
+        </button>
+      </div>
     </div>
   );
 }
