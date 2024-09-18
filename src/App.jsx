@@ -3,11 +3,13 @@ import Header from "./components/Header";
 import Sorting from "./components/Sorting";
 import TodoList from "./components/TodoList";
 
+function handleAddItems() {}
+
 function App() {
   return (
     <div className=" h-screen bg-bgColor text-textColor ">
       <Header />
-      <Form />
+      <Form onAddItems={handleAddItems} />
       <TodoList />
       <Sorting />
     </div>
