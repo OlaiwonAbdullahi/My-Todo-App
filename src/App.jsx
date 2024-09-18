@@ -1,5 +1,11 @@
+import Header from "./components/Header";
+
 function App() {
-  return <div className=" bg-black">asdfghj</div>;
+  return (
+    <div className=" h-screen bg-bgColor text-textColor">
+      <Header />
+    </div>
+  );
 }
 
 export default App;
