@@ -8,18 +8,13 @@ export default function Header() {
           <img src={Logo} className="h-12 w-12"></img>
           <span className="mt-3">My Todo App</span>
         </div>
-        <div className="" data-tooltip-target="tooltip-default">
+        <div className="has-tooltip">
+          <span className="tooltip rounded p-1  text-textColor mr bg-hrColor border w-14 mr-10 mt-10 ">
+            GitHub Repo
+          </span>
           <a href="https://github.com/OlaiwonAbdullahi/My-Todo-App">
             <img src={github} alt="" className="h-12 w-12" />
           </a>
-          <div
-            id="tooltip-default"
-            role="tooltip"
-            className="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
-          >
-            Tooltip content
-            <div className="tooltip-arrow" data-popper-arrow></div>
-          </div>
         </div>
       </div>
       <hr className=" mt-3 border-hrColor" />
