@@ -45,11 +45,11 @@ function Todo({ item, onChecked, onDelete, editTask, isEditing, setEditId }) {
               type="text"
               value={newName}
               onChange={(e) => setNewName(e.target.value)}
-              className="border-hrColor border rounded-md p-2 w-full"
+              className="border-hrColor border rounded-md p-2 w-full text-hrColor bg-bgColor mt-2"
             />
             <button
               type="submit"
-              className="bg-green-500 text-bgColor p-2 rounded-md"
+              className="bg-green-500 text-bgColor p-2 rounded-md mt-2"
             >
               Save
             </button>
