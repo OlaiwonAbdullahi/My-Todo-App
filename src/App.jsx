@@ -11,11 +11,29 @@ function App() {
     setItems((prevItems) => [...prevItems, item]); // Add new item to the state
   }
 
+  function handleDeleteItem(id) {
+    setItems((prevItems) => prevItems.filter((item) => item.id !== id));
+  }
+
+  function editTask(id, newName) {
+    const editedTaskList = tasks.map((task) => {
+      if (id === task.id) {
+        return { ...task, name: newName };
+      }
+      return task;
+    });
+    setTasks(editedTaskList);
+  }
+
   return (
     <div className="h-screen bg-bgColor text-textColor">
       <Header />
       <Form onAddItems={handleAddItems} />
-      <TodoList items={items} />
+      <TodoList
+        items={items}
+        onDeleteItem={handleDeleteItem}
+        editTask={editTask}
+      />
       <Sorting />
     </div>
   );

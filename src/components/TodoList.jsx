@@ -1,18 +1,23 @@
-export default function TodoList({ items }) {
+export default function TodoList({ items, onDeleteItem }) {
   const handleChecked = (id) => {};
 
   return (
     <div className="flex justify-center p-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-4 mx-auto">
         {items.map((item) => (
-          <Todo key={item.id} item={item} onChecked={handleChecked} />
+          <Todo
+            key={item.id}
+            item={item}
+            onChecked={handleChecked}
+            onDelete={onDeleteItem}
+          />
         ))}
       </div>
     </div>
   );
 }
 
-function Todo({ item, onChecked }) {
+function Todo({ item, onChecked, onDelete }) {
   return (
     <div className="border-hrColor border pb-2 px-2 w-full sm:w-72 font-titalium mt-5 shadow-lg rounded-md bg-bgColor">
       <div className="flex justify-between gap-3 items-center">
@@ -31,7 +36,10 @@ function Todo({ item, onChecked }) {
           Edit
         </button>
 
-        <button className="bg-red-500 text-white rounded-md p-2 w-full sm:w-24 md:w-20 lg:w-16 text-xs sm:text-sm md:text-base h-10">
+        <button
+          className="bg-red-500 text-white rounded-md p-2 w-full sm:w-24 md:w-20 lg:w-16 text-xs sm:text-sm md:text-base h-10"
+          onClick={() => onDelete(item.id)}
+        >
           Delete
         </button>
       </div>
