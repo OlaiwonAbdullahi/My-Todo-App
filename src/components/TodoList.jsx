@@ -1,64 +1,39 @@
 import { useState } from "react";
 
-const todos = [
-  {
-    id: 1,
-    title: "Learn JavaScript basics",
-    completed: false,
-  },
-  {
-    id: 2,
-    title: "Build a ToDo App",
-    completed: false,
-  },
-  {
-    id: 3,
-    title: "Practice ReactJS",
-    completed: true,
-  },
-  {
-    id: 4,
-    title: "Read about Web3",
-    completed: false,
-  },
-  {
-    id: 5,
-    title: "Work on portfolio website",
-    completed: true,
-  },
-];
+export default function TodoList({ items }) {
+  const [todos, setTodos] = useState(items); // Initialize state with items prop
 
-export default function TodoList() {
-  const todo = todos;
-  const [checked, setChecked] = useState("true");
+  const handleChecked = (id) => {
+    // Toggle completion status
+    setTodos((prevTodos) =>
+      prevTodos.map((todo) =>
+        todo.id === id ? { ...todo, completed: !todo.completed } : todo
+      )
+    );
+  };
+
   return (
     <div className="flex justify-center p-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-4 mx-auto">
-        {todo.map((todolist) => (
-          <Todo
-            todolist={todolist}
-            key={todolist.id}
-            onChecked={setChecked}
-            checked={checked}
-          />
+        {todos.map((item) => (
+          <Todo key={item.id} item={item} onChecked={handleChecked} />
         ))}
       </div>
     </div>
   );
 }
 
-function Todo({ todolist, checked, onChecked }) {
+function Todo({ item, onChecked }) {
   return (
     <div className="border-hrColor border pb-2 px-2 w-full sm:w-72 font-titalium mt-5 shadow-lg rounded-md bg-bgColor">
       <div className="flex justify-between gap-3 items-center">
         <p className="mb-4 whitespace-nowrap text-lg sm:text-base mt-3">
-          {todolist.title}
+          {item.task}
         </p>
         <input
           type="checkbox"
-          checked={todolist.completed}
-          value={checked}
-          onChange={(e) => onChecked(e.target.value)}
+          checked={item.completed}
+          onChange={() => onChecked(item.id)} // Toggle completion
           className="w-4 h-4 sm:w-3 sm:h-3 bg-bgColor border-2 border-hrColor rounded-sm accent-hrColor"
         />
       </div>
