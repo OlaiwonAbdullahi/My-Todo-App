@@ -37,7 +37,7 @@ function Todo({ item, onChecked, onDelete, editTask, isEditing, setEditId }) {
   };
 
   return (
-    <div className="border-hrColor border pb-2 px-2 w-72 sm:w-72 font-titalium mt-5 shadow-lg rounded-md bg-bgColor">
+    <div className="border-hrColor border pb-2 px-2 w-full sm:w-72 font-titalium mt-5 shadow-lg rounded-md bg-bgColor">
       <div className="flex justify-between gap-3 items-center">
         {isEditing ? (
           <form onSubmit={handleEditSubmit} className="flex items-center gap-2">

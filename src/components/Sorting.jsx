@@ -1,15 +1,14 @@
-export default function Sorting() {
+export default function Sorting({ handleSortChange }) {
   return (
-    <div className=" flex justify-center bottom-0 sticky mb-0 gap-2 font-titalium">
+    <div className="w-full flex justify-center items-center fixed bottom-0 mb-4 gap-2 font-titalium">
       <span>Sort By:</span>
       <select
-        name=""
-        id=""
         className="bg-bgColor border border-hrColor rounded-lg accent-hrColor"
+        onChange={(e) => handleSortChange(e.target.value)}
       >
-        <option value="">All</option>
-        <option value="">Active</option>
-        <option value="">Completed</option>
+        <option value="all">All</option>
+        <option value="active">Active</option>
+        <option value="completed">Completed</option>
       </select>
     </div>
   );
