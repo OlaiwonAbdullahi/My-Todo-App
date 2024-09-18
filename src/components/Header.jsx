@@ -9,7 +9,9 @@ export default function Header() {
           <span className="mt-3">My Todo App</span>
         </div>
         <div className="">
-          <img src={github} alt="" className="h-12 w-12" />
+          <a href="https://github.com/OlaiwonAbdullahi/My-Todo-App">
+            <img src={github} alt="" className="h-12 w-12" />
+          </a>
         </div>
       </div>
       <hr className=" mt-3 border-hrColor" />
