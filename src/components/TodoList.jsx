@@ -30,6 +30,7 @@ export default function TodoList({
 
 function Todo({ item, onChecked, onDelete, editTask, isEditing, setEditId }) {
   const [newName, setNewName] = useState(item.task);
+  const [checked, setChecked] = useState("");
 
   const handleEditSubmit = (e) => {
     e.preventDefault();
@@ -61,8 +62,8 @@ function Todo({ item, onChecked, onDelete, editTask, isEditing, setEditId }) {
             </p>
             <input
               type="checkbox"
-              checked={item.completed}
-              onChange={() => onChecked(item.id)}
+              checked={checked}
+              onChange={(e) => setChecked(e.target.value)}
               className="w-4 h-4 sm:w-3 sm:h-3 bg-bgColor border-2 border-hrColor rounded-sm accent-hrColor"
             />
           </>
