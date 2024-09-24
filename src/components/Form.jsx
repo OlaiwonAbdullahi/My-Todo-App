@@ -8,13 +8,13 @@ export default function Form({ onAddItems }) {
     if (!task) return;
 
     const newTask = {
-      id: Date.now(), // Create a unique ID
+      id: Date.now(),
       task,
-      completed: false, // Initial state is not completed
+      completed: false,
     };
-    setTask(""); // Reset the input field
+    setTask("");
     onAddItems(newTask);
-    console.log(newTask); // Add new task to the list
+    console.log(newTask);
   }
 
   return (
